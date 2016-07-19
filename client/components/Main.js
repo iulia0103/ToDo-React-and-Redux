@@ -9,7 +9,7 @@ const Main = React.createClass({
   render(){
     return(
       <div>
-        <Link to="/">ToDo App</Link>
+        <Link to="/">Habitica</Link>
         <OtherTasks />
         <OtherTasks />
         <Todo />
