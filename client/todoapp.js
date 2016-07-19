@@ -7,12 +7,16 @@ import NotFound from './components/NotFound.js';
 
 //react-router
 import {Router, Route, browserHistory} from 'react-router';
+import {Provider} from 'react-redux';
+import store, {history} from './store.js';
 
 const router = (
-  <Router history={browserHistory}>
-    <Route path="/" component={Main}/>
-    <Route path="*" component={NotFound}/>
-  </Router>
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={Main}/>
+      <Route path="*" component={NotFound}/>
+    </Router>
+  </Provider>
 );
 
 render(router, document.getElementById('root'));
