@@ -1,14 +1,14 @@
 function todos(state=[], action){
+  const i = action.index;
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, {
-        text: action.text;
+        text: action.text,
         completed: false
       }];
       break;
 
     case 'COMPLETE_TODO':
-    const i = action.index;
     return [
       ...state.slice(0,i), //before the one needed for update
       {...state[i], completed: true}, //similar to Object.assign()
@@ -17,7 +17,6 @@ function todos(state=[], action){
       break;
 
     case 'DELETE_TODO':
-      const i = action.index;
       return [
         ...state.slice(0,i),
         ...state.slice(i+1)
