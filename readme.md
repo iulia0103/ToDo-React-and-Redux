@@ -1,6 +1,6 @@
-# ToDo
+# Learn Redux
 
-A React + Redux ToDo (todos + weekly and daily activities)
+A simple React + Redux implementation. This will be turned into a free video series once the app is totally fleshed out.
 
 ## Running
 
