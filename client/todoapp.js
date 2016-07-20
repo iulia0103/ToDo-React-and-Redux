@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 
 //import components
-import Main from './components/Main.js';
+import App from './components/App.js';
 import NotFound from './components/NotFound.js';
 
 //react-router
@@ -13,7 +13,7 @@ import store, {history} from './store.js';
 const router = (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Main}/>
+      <Route path="/" component={App}/>
       <Route path="*" component={NotFound}/>
     </Router>
   </Provider>
