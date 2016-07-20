@@ -2,8 +2,12 @@ import React from 'react';
 
 const Habits = React.createClass({
   render(){
+    const habits = this.props.habits;
+    const i = habits.index;
     return(
-      <div>Habits</div>
+      <ul>
+        {habits.map((habit, i) => <li key={i}>{habit.text}</li>)}
+      </ul>
     )
   }
 });
