@@ -2,17 +2,18 @@ import React from 'react';
 import {Link} from 'react-router';
 
 //import components
-import OtherTasks from './OtherTasks.js';
-import Todo from './Todo.js';
+import Habits from './Habits.js';
+import Todos from './Todos.js';
 
 const Main = React.createClass({
   render(){
     return(
       <div>
-        <Link to="/">ToDo App</Link>
-        <OtherTasks />
-        <OtherTasks />
-        <Todo />
+        <Link to="/">Habitica</Link>
+        <Todos />
+        <Todos />
+        <Todos />
+        <Habits />
       </div>
     )
   }

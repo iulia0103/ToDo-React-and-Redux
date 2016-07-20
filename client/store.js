@@ -5,11 +5,11 @@ import {browserHistory} from 'react-router';
 import rootReducer from './reducers/root.js'
 
 import todos from './data/todos.js';
-import others from './data/others.js';
+import habits from './data/habits.js';
 
 const defaultState = {
   todos,
-  others
+  habits
 };
 
 const store = createStore(rootReducer, defaultState);

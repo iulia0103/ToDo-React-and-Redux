@@ -1,13 +1,12 @@
-function others(state=[], action){
+function habits(state=[], action){
   switch (action.type) {
-    case 'ADD_OTHER':
+    case 'ADD_HABIT':
       return [...state, {
-        taskType: action.taskType,
         text: action.text
       }];
       break;
 
-    case 'REMOVE_OTHER':
+    case 'DELETE_HABIT':
       const i = action.index;
       return [
         // from the start to the one we want to delete
@@ -22,4 +21,4 @@ function others(state=[], action){
   }
 }
 
-export default others;
+export default habits;
