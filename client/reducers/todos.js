@@ -3,6 +3,7 @@ function todos(state=[], action){
   switch (action.type) {
     case 'ADD_TODO':
       return [...state, {
+        taskType: action.taskType,
         text: action.text,
         completed: false
       }];
