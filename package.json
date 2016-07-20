@@ -36,6 +36,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "raven-js": "^2.3.0",
+    "rc-progress": "^1.0.4",
     "react": "^15.0.2",
     "react-addons-css-transition-group": "^15.0.2",
     "react-dom": "^15.0.2",

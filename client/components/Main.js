@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import {Line} from 'rc-progress';
 
 //import components
 import Habits from './Habits.js';
@@ -23,7 +24,24 @@ const Main = React.createClass({
           <Grid>
             <h1>Habitica</h1>
             <p>This is a simple to do app which allows users to keep track of their habits, daily and weekly tasks, as well as general tasks.</p>
-            <p><Button bsStyle='primary' bsSize='large'>Learn more »</Button></p>
+
+            <Row>
+              <Col md={2}>
+                <p>Health <span>&#10084;</span></p>
+              </Col>
+              <Col md={10}>
+                <Line percent="70" strokeWidth="1" strokeColor="white" />
+              </Col>
+            </Row>
+
+            <Row>
+              <Col md={2}>
+                <p>Experience <span>&#9733;</span></p>
+              </Col>
+              <Col md={10}>
+                <Line percent="50" strokeWidth="1" strokeColor="white" />
+              </Col>
+            </Row>
           </Grid>
         </Jumbotron>
 
@@ -31,29 +49,21 @@ const Main = React.createClass({
           <Row>
             <Col md={3}>
               <h3>Habits</h3>
-              <span><Button bsStyle='default' bsSize='small'>Strong »</Button></span>
-              <span><Button bsStyle='default' bsSize='small'>Weak »</Button></span>
               <Habits habits={habits}/>
             </Col>
 
             <Col md={3}>
               <h3>Daily</h3>
-              <span><Button bsStyle='default' bsSize='small'>Active »</Button></span>
-              <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
               <Todos todos={dailies}/>
             </Col>
 
             <Col md={3}>
               <h3>Weekly</h3>
-              <span><Button bsStyle='default' bsSize='small'>Active »</Button></span>
-              <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
               <Todos todos={weeklies}/>
             </Col>
 
             <Col md={3}>
               <h3>To Do</h3>
-              <span><Button bsStyle='default' bsSize='small'>Active »</Button></span>
-              <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
               <Todos todos={todos}/>
             </Col>
           </Row>
