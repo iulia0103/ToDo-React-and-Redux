@@ -25,11 +25,17 @@ module.exports = {
       include: path.join(__dirname, 'client')
     },
     // CSS
-    { 
-      test: /\.styl$/, 
+    {
+      test: /\.styl$/,
       include: path.join(__dirname, 'client'),
       loader: 'style-loader!css-loader!stylus-loader'
-    }
+    },
+    // Used for Bootstrap Less Source Files
+      { test: /\.less/, loader: 'style!css!less' },
+      // Used for Bootstrap Less Source Files
+      { test: /\.css/, loader: 'style!css' },
+      // Used for Bootstrap Glyphicon Fonts
+      { test: /\.(woff2|woff|ttf|svg|eot)$/, loader: 'file' }
     ]
   }
 };

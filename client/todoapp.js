@@ -10,6 +10,8 @@ import {Router, Route, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import store, {history} from './store.js';
 
+import 'bootstrap/less/bootstrap.less'
+
 const router = (
   <Provider store={store}>
     <Router history={history}>
