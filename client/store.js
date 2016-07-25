@@ -4,11 +4,11 @@ import {browserHistory} from 'react-router';
 
 import rootReducer from './reducers/root.js'
 
-import todos from './data/todos.js';
+import tasks from './data/tasks.js';
 import habits from './data/habits.js';
 
-const defaultState = {
-  todos,
+export const defaultState = {
+  tasks,
   habits
 };
 

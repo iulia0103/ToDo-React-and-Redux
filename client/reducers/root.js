@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 
-import todos from './todos.js';
+import tasks from './tasks.js';
 import habits from './habits.js';
 
 const rootReducer = combineReducers({
-  todos,
+  tasks,
   habits,
   routing: routerReducer
 });

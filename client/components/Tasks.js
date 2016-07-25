@@ -1,22 +1,22 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 
-const Todos = React.createClass({
+const Tasks = React.createClass({
   handleSubmit(event){
     event.preventDefault();
 
     const text = this.refs.task.value;
     const taskType = this.props.type;
 
-    this.props.addTodo(taskType, text);
-    this.refs.todoForm.reset();
+    this.props.addTask(taskType, text);
+    this.refs.taskForm.reset();
   },
   render(){
-    const todos = this.props.todos;
-    const i = todos.index;
+    const tasks = this.props.tasks;
+    const i = tasks.index;
     return(
       <div>
-        <form ref="todoForm" onSubmit={this.handleSubmit}>
+        <form ref="taskForm" onSubmit={this.handleSubmit}>
           <input type="text" ref="task" placeholder="task" />
           <input type="submit" hidden/>
         </form>
@@ -25,10 +25,10 @@ const Todos = React.createClass({
         <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
 
         <div>
-          {todos.map((todo, i) => <p key={i}>
+          {tasks.map((task, i) => <p key={i}>
             <span><Button bsStyle='default' bsSize='small'>&#9733;</Button></span>
-            <span>   {todo.text}   </span>
-            <button>&times;</button>
+            <span>   {task.text}  </span>
+            <button onClick={this.props.removeTask.bind(null, i)}>&times;</button>
           </p>)}
         </div>
       </div>
@@ -36,4 +36,4 @@ const Todos = React.createClass({
   }
 });
 
-export default Todos;
+export default Tasks;

@@ -6,9 +6,9 @@ import Main from './Main.js';
 function mapStateToProps(state){
   return {
     habits: state.habits,
-    dailies: state.todos.filter(todo => todo.taskType === 'daily'),
-    weeklies: state.todos.filter(todo => todo.taskType === 'weekly'),
-    todos: state.todos.filter(todo => todo.taskType === 'todo')
+    dailies: state.tasks.filter(task => task.taskType === 'daily'),
+    weeklies: state.tasks.filter(task => task.taskType === 'weekly'),
+    todos: state.tasks.filter(task => task.taskType === 'todo')
   }
 }
 

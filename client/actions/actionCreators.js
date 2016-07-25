@@ -1,26 +1,25 @@
-import todos from '../data/todos.js';
+import tasks from '../data/tasks.js';
 import habits from '../data/habits.js';
 
-export function addTodo(taskType, text){
+export function addTask(taskType, text){
   return {
-    type: 'ADD_TODO',
+    type: 'ADD_TASK',
     taskType,
-    text,
-    completed: false
+    text
   }
 }
 
-export function completeTodo(index){
+export function completeTask(i){
   return {
-    type: 'COMPLETE_TODO',
-    index
+    type: 'COMPLETE_TASK',
+    i
   }
 }
 
-export function removeTodo(index) {
+export function removeTask(i) {
   return {
-    type: 'REMOVE_TODO',
-    index
+    type: 'REMOVE_TASK',
+    i
   }
 }
 

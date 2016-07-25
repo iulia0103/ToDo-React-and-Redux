@@ -1,14 +1,17 @@
-function todos(state=[], action){
-  const i = action.index;
+
+function tasks(state=[], action){
+  const i = action.i;
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_TASK':
       return [...state, {
+        id: state.length + 1,
         taskType: action.taskType,
         text: action.text,
+        completed: false
       }];
       break;
 
-    case 'COMPLETE_TODO':
+    case 'COMPLETE_TASK':
     return [
       ...state.slice(0,i), //before the one needed for update
       {...state[i], completed: true}, //similar to Object.assign()
@@ -16,7 +19,7 @@ function todos(state=[], action){
     ]
       break;
 
-    case 'REMOVE_TODO':
+    case 'REMOVE_TASK':
       return [
         ...state.slice(0,i),
         ...state.slice(i+1)
@@ -29,4 +32,4 @@ function todos(state=[], action){
   return state;
 }
 
-export default todos;
+export default tasks;
