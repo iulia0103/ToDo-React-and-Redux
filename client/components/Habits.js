@@ -2,13 +2,21 @@ import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 
 const Habits = React.createClass({
+  handleSubmit(event){
+    event.preventDefault();
+
+    const text = this.refs.habit.value;
+
+    this.props.addHabit(text);
+    this.refs.habitForm.reset();
+  },
   render(){
     const habits = this.props.habits;
     const i = habits.index;
     return(
       <div>
-        <form ref="todoForm">
-          <input type="text" ref="task" placeholder="task" />
+        <form ref="habitForm" onSubmit={this.handleSubmit}>
+          <input type="text" ref="habit" placeholder="habit" />
           <input type="submit" hidden/>
         </form>
 
@@ -20,7 +28,7 @@ const Habits = React.createClass({
               <span><Button bsStyle='default' bsSize='small'>&#43;</Button></span>
               <span><Button bsStyle='default' bsSize='small'>&#8722;</Button></span>
               <span>   {habit.text}   </span>
-              <span>&times;</span>
+              <button onClick={this.props.removeHabit.bind(null, i)}>&times;</button>
             </p>)}
         </div>
       </div>

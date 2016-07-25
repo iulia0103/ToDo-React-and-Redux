@@ -6,8 +6,8 @@ function habits(state=[], action){
       }];
       break;
 
-    case 'DELETE_HABIT':
-      const i = action.index;
+    case 'REMOVE_HABIT':
+    const i = action.i;
       return [
         // from the start to the one we want to delete
         ...state.slice(0,action.i),
@@ -19,6 +19,7 @@ function habits(state=[], action){
     default:
       return state;
   }
+  return state;
 }
 
 export default habits;

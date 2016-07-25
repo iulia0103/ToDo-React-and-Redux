@@ -5,7 +5,8 @@ export function addTodo(taskType, text){
   return {
     type: 'ADD_TODO',
     taskType,
-    text
+    text,
+    completed: false
   }
 }
 
@@ -16,9 +17,9 @@ export function completeTodo(index){
   }
 }
 
-export function deleteTodo(index) {
+export function removeTodo(index) {
   return {
-    type: 'DELETE_TODO',
+    type: 'REMOVE_TODO',
     index
   }
 }
@@ -30,9 +31,9 @@ export function addHabit(text){
   }
 }
 
-export function removeHabit(index){
+export function removeHabit(i){
   return {
-    type: 'REMOVE_OTHER',
-    index
+    type: 'REMOVE_HABIT',
+    i
   }
 }

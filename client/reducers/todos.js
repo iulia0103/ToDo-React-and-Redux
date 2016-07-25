@@ -5,7 +5,6 @@ function todos(state=[], action){
       return [...state, {
         taskType: action.taskType,
         text: action.text,
-        completed: false
       }];
       break;
 
@@ -17,7 +16,7 @@ function todos(state=[], action){
     ]
       break;
 
-    case 'DELETE_TODO':
+    case 'REMOVE_TODO':
       return [
         ...state.slice(0,i),
         ...state.slice(i+1)
@@ -27,6 +26,7 @@ function todos(state=[], action){
     default:
       return state;
   }
+  return state;
 }
 
 export default todos;
