@@ -16,7 +16,7 @@ import Col from 'react-bootstrap/lib/Col';
 
 const Main = React.createClass({
   render(){
-    const {habits, dailies, weeklies, todos} = this.props;
+    const {habits, dailies, weeklies, todos, actionCreators} = this.props;
 
     return(
       <div>
@@ -49,22 +49,22 @@ const Main = React.createClass({
           <Row>
             <Col md={3}>
               <h3>Habits</h3>
-              <Habits habits={habits}/>
+              <Habits habits={habits} {...this.props} />
             </Col>
 
             <Col md={3}>
               <h3>Daily</h3>
-              <Todos todos={dailies}/>
+              <Todos todos={dailies} type="daily" />
             </Col>
 
             <Col md={3}>
               <h3>Weekly</h3>
-              <Todos todos={weeklies}/>
+              <Todos todos={weeklies} type="weekly" {...this.props.weeklies} />
             </Col>
 
             <Col md={3}>
               <h3>To Do</h3>
-              <Todos todos={todos}/>
+              <Todos todos={todos} type="todo" {...this.props.todos} />
             </Col>
           </Row>
         </Grid>
