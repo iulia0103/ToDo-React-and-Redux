@@ -4,7 +4,7 @@ import {Line} from 'rc-progress';
 
 //import components
 import Habits from './Habits.js';
-import Todos from './Todos.js';
+import Tasks from './Tasks.js';
 
 //import bootstrap
 import Button from 'react-bootstrap/lib/Button';
@@ -54,17 +54,17 @@ const Main = React.createClass({
 
             <Col md={3}>
               <h3>Daily</h3>
-              <Todos todos={dailies} type="daily" />
+              <Tasks tasks={dailies} type="daily" {...this.props} />
             </Col>
 
             <Col md={3}>
               <h3>Weekly</h3>
-              <Todos todos={weeklies} type="weekly" {...this.props.weeklies} />
+              <Tasks tasks={weeklies} type="weekly" {...this.props} />
             </Col>
 
             <Col md={3}>
               <h3>To Do</h3>
-              <Todos todos={todos} type="todo" {...this.props.todos} />
+              <Tasks tasks={todos} type="todo" {...this.props}/>
             </Col>
           </Row>
         </Grid>
