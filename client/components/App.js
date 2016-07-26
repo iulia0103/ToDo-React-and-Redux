@@ -5,10 +5,11 @@ import Main from './Main.js';
 
 function mapStateToProps(state){
   return {
+    progressbars: state.progressbars,
     habits: state.habits,
     dailies: state.tasks.filter(task => task.taskType === 'daily'),
     weeklies: state.tasks.filter(task => task.taskType === 'weekly'),
-    todos: state.tasks.filter(task => task.taskType === 'todo')
+    todos: state.tasks.filter(task => task.taskType === 'todo'),
   }
 }
 

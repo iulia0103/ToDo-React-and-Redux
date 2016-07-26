@@ -5,6 +5,7 @@ import {Line} from 'rc-progress';
 //import components
 import Habits from './Habits.js';
 import Tasks from './Tasks.js';
+import ProgressBars from './ProgressBars.js';
 
 //import bootstrap
 import Button from 'react-bootstrap/lib/Button';
@@ -16,7 +17,7 @@ import Col from 'react-bootstrap/lib/Col';
 
 const Main = React.createClass({
   render(){
-    const {habits, dailies, weeklies, todos, actionCreators} = this.props;
+    const {habits, dailies, weeklies, todos, progressbars, actionCreators} = this.props;
 
     return(
       <div>
@@ -25,23 +26,7 @@ const Main = React.createClass({
             <h1>Habitica</h1>
             <p>This is a simple to do app which allows users to keep track of their habits, daily and weekly tasks, as well as general tasks.</p>
 
-            <Row>
-              <Col md={2}>
-                <p>Health <span>&#10084;</span></p>
-              </Col>
-              <Col md={10}>
-                <Line percent="70" strokeWidth="1" strokeColor="white" />
-              </Col>
-            </Row>
-
-            <Row>
-              <Col md={2}>
-                <p>Experience <span>&#9733;</span></p>
-              </Col>
-              <Col md={10}>
-                <Line percent="50" strokeWidth="1" strokeColor="white" />
-              </Col>
-            </Row>
+            <ProgressBars progressbars={progressbars} />
           </Grid>
         </Jumbotron>
 

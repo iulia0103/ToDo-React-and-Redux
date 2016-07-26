@@ -28,7 +28,7 @@ const Tasks = React.createClass({
           {tasks.map((task, i) => <p key={i}>
             <span><Button bsStyle='default' bsSize='small'>&#9733;</Button></span>
             <span>   {task.text}  </span>
-            <button onClick={this.props.removeTask.bind(null, i)}>&times;</button>
+            <button onClick={()=>{this.props.removeTask(task)}}>&times;</button>
           </p>)}
         </div>
       </div>

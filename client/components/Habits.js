@@ -20,13 +20,21 @@ const Habits = React.createClass({
           <input type="submit" hidden/>
         </form>
 
-        <span><Button bsStyle='default' bsSize='small'>Strong »</Button></span>
-        <span><Button bsStyle='default' bsSize='small'>Weak »</Button></span>
+        <span>
+          <Button bsStyle='default' bsSize='small'>
+            Strong »
+          </Button>
+        </span>
+        <span>
+          <Button bsStyle='default' bsSize='small'>
+            Weak »
+          </Button>
+        </span>
 
         <div>
           {habits.map((habit, i) => <p key={i}>
-              <span><Button bsStyle='default' bsSize='small'>&#43;</Button></span>
-              <span><Button bsStyle='default' bsSize='small'>&#8722;</Button></span>
+              <span><Button bsStyle='default' bsSize='small' onClick={this.props.increaseHealth.bind(null, i)}>&#43;</Button></span>
+              <span><Button bsStyle='default' bsSize='small' onClick={this.props.decreaseHealth.bind(null, i)}>&#8722;</Button></span>
               <span>   {habit.text}   </span>
               <button onClick={this.props.removeHabit.bind(null, i)}>&times;</button>
             </p>)}

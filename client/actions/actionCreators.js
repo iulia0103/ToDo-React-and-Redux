@@ -1,5 +1,6 @@
 import tasks from '../data/tasks.js';
 import habits from '../data/habits.js';
+import progressbars from '../data/progressbars.js';
 
 export function addTask(taskType, text){
   return {
@@ -9,17 +10,17 @@ export function addTask(taskType, text){
   }
 }
 
-export function completeTask(i){
+export function completeTask(id){
   return {
     type: 'COMPLETE_TASK',
-    i
+    id
   }
 }
 
-export function removeTask(i) {
+export function removeTask(id) {
   return {
     type: 'REMOVE_TASK',
-    i
+    id
   }
 }
 
@@ -34,5 +35,19 @@ export function removeHabit(i){
   return {
     type: 'REMOVE_HABIT',
     i
+  }
+}
+
+export function increaseHealth(index){
+  return {
+    type: 'INCREASE_HEALTH',
+    index
+  }
+}
+
+export function decreaseHealth(index){
+  return {
+    type: 'DECREASE_PROGRESS',
+    index
   }
 }
