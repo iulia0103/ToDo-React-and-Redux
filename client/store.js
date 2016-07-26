@@ -6,10 +6,12 @@ import rootReducer from './reducers/root.js'
 
 import tasks from './data/tasks.js';
 import habits from './data/habits.js';
+import progressbars from './data/progressbars.js';
 
 export const defaultState = {
-  tasks,
-  habits
+  progressbars,
+  habits,
+  tasks
 };
 
 const store = createStore(rootReducer, defaultState);
