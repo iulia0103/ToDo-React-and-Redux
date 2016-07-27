@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
+import {MdClear} from 'react-icons/lib/md';
 
 const Tasks = React.createClass({
   handleSubmit(event){
@@ -26,9 +27,13 @@ const Tasks = React.createClass({
 
         <div>
             {tasks.map((task, i) => <p key={i}>
-              <span><Button bsStyle='default' bsSize='small'>&#9733;</Button></span>
+              <span>
+                <Button bsStyle='default' bsSize='small'>
+                  {task.symbol}
+                </Button>
+              </span>
               <span>   {task.text}  </span>
-              <button onClick={()=>{this.props.removeTask(task)}}>&times;</button>
+              <MdClear onClick={()=>{this.props.removeTask(task)}} />
             </p>)}
           </div>
       </div>

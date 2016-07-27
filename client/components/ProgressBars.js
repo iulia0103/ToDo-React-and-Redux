@@ -12,7 +12,7 @@ const ProgressBars = React.createClass({
           <div key={i}>
             <Row>
               <Col md={2}>
-                <p> {progressbar.type}: {progressbar.progress}% </p>
+                <p> {progressbar.type} {progressbar.symbol} </p>
               </Col>
               <Col md={10}>
                 <Line percent={progressbar.progress} strokeWidth="1" strokeColor="white" />
