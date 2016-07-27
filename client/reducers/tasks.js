@@ -1,5 +1,10 @@
+import {MdGrade, MdDoneAll} from 'react-icons/lib/md';
+import React from 'react';
+
 function tasks(state=[], action){
-  const i = action.i;
+  const task=action.id;
+  let i = state.indexOf(task);
+
   switch (action.type) {
     case 'ADD_TASK':
       return [...state, {
@@ -10,14 +15,28 @@ function tasks(state=[], action){
       }];
       break;
 
+    case 'TOGGLE_TASK':
+      if(task.completed === false) {
+        return [
+          ...state.slice(0,i),
+          ...state[i], {completed: true, symbol: <MdDoneAll />},
+          ...state.slice(i+1)
+        ];
+      }
+      else {
+        return [
+          ...state.slice(0,i),
+          ...state[i], {completed: false, symbol: <MdGrade />},
+          ...state.slice(i+1)
+        ];
+      }
+      break;
+
     case 'REMOVE_TASK':
-      const task=action.id;
-      let i = state.indexOf(task);
       return [
-        ...state.slice(0,i), //id is bigger with 1 than the index
+        ...state.slice(0,i),
         ...state.slice(i+1)
       ];
-
       break;
 
     default:
