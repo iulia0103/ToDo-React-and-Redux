@@ -10,26 +10,13 @@ function tasks(state=[], action){
       }];
       break;
 
-    case 'COMPLETE_TASK':
-
-    return [
-      ...state.slice(0,i), //before the one needed for update
-      {...state[i], completed: true}, //similar to Object.assign()
-      ...state.slice(i+1)//after the one needed
-    ]
-      break;
-
     case 'REMOVE_TASK':
-      const id=action.id;
-      state.map(task => {
-        if(id === task.id){
-          return [
-            ...state.slice(0,id-1), //id is biggr with 1 than the index
-            ...state.slice(id)
-          ]
-        }
-      });
-
+      const task=action.id;
+      let i = state.indexOf(task);
+      return [
+        ...state.slice(0,i), //id is bigger with 1 than the index
+        ...state.slice(i+1)
+      ];
 
       break;
 
