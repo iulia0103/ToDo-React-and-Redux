@@ -17,19 +17,19 @@ function tasks(state=[], action){
 
     case 'TOGGLE_TASK':
       if(task.completed === false) {
-        return [
-          ...state.slice(0,i),
-          ...state[i], {completed: true, symbol: <MdDoneAll />},
-          ...state.slice(i+1)
-        ];
-      }
-      else {
-        return [
-          ...state.slice(0,i),
-          ...state[i], {completed: false, symbol: <MdGrade />},
-          ...state.slice(i+1)
-        ];
-      }
+              return [
+                ...state.slice(0,i),
+                ...state[i], {completed: true, symbol: <MdDoneAll />},
+                ...state.slice(i+1)
+              ];
+            }
+            else {
+              return [
+                ...state.slice(0,i),
+                ...state[i], {completed: false, symbol: <MdGrade />},
+                ...state.slice(i+1)
+              ];
+            }
       break;
 
     case 'REMOVE_TASK':

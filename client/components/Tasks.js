@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import {MdClear} from 'react-icons/lib/md';
 
+
 const Tasks = React.createClass({
   handleSubmit(event){
     event.preventDefault();
@@ -22,13 +23,13 @@ const Tasks = React.createClass({
           <input type="submit" hidden/>
         </form>
 
-        <span><Button bsStyle='default' bsSize='small'>Active »</Button></span>
-        <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
+        <span><Button>Active »</Button></span>
+        <span><Button>Completed »</Button></span>
 
         <div>
             {tasks.map((task, i) => <p key={i}>
               <span>
-                <Button bsStyle='default' bsSize='small' onClick={()=>{this.props.toggleTask(task)}}>
+                <Button onClick={()=>{this.props.toggleTask(task)}}>
                   {task.symbol}
                 </Button>
               </span>

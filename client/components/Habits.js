@@ -2,6 +2,7 @@ import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import {MdClear} from 'react-icons/lib/md';
 
+
 const Habits = React.createClass({
   handleSubmit(event){
     event.preventDefault();
@@ -22,29 +23,25 @@ const Habits = React.createClass({
         </form>
 
         <span>
-          <Button bsStyle='default' bsSize='small'>
-            Strong »
-          </Button>
+          <Button>Strong »</Button>
         </span>
         <span>
-          <Button bsStyle='default' bsSize='small'>
-            Weak »
-          </Button>
+          <Button>Weak »</Button>
         </span>
 
         <div>
           {habits.map((habit, i) => <p key={i}>
               <span>
-                <Button bsStyle='default' bsSize='small' onClick={this.props.increaseHealth.bind(null, i)}>
+                <Button onClick={()=>{this.props.increaseHealth()}}>
                   &#43;
                 </Button>
               </span>
               <span>
-                <Button bsStyle='default' bsSize='small' onClick={this.props.decreaseHealth.bind(null, i)}>
+                <Button onClick={()=>{this.props.decreaseHealth()}}>
                   &#8722;
                 </Button>
               </span>
-              
+
               <span>   {habit.text}   </span>
               <MdClear onClick={this.props.removeHabit.bind(null, i)} />
             </p>)}
