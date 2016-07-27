@@ -6,13 +6,11 @@ const progressbars = [
     type: 'Health',
     progress: 30,
     symbol: <MdFavorite />,
-    color: '#ffb3cc'
   },
   {
     type: 'Experience',
     progress: 20,
     symbol: <MdGrade />,
-    color: '#ffff80'
   }
 ];
 

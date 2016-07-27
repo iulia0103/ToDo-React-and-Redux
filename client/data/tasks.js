@@ -12,7 +12,7 @@ const tasks = [
   {
     id: 2,
     taskType: 'todo',
-    text: 'make another react+redux tutorial',
+    text: 'make a react+redux tutorial',
     completed: true,
     symbol: <MdDoneAll />
   },

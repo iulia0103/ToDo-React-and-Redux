@@ -38,16 +38,14 @@ export function removeHabit(i){
   }
 }
 
-export function increaseHealth(index){
+export function increaseHealth(){
   return {
     type: 'INCREASE_HEALTH',
-    index
   }
 }
 
-export function decreaseHealth(index){
+export function decreaseHealth(){
   return {
     type: 'DECREASE_PROGRESS',
-    index
   }
 }

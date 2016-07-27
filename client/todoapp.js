@@ -12,6 +12,7 @@ import store, {history} from './store.js';
 
 import 'bootstrap/less/bootstrap.less'
 
+
 const router = (
   <Provider store={store}>
     <Router history={history}>
@@ -20,5 +21,6 @@ const router = (
     </Router>
   </Provider>
 );
+
 
 render(router, document.getElementById('root'));
