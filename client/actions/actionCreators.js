@@ -46,6 +46,6 @@ export function increaseHealth(){
 
 export function decreaseHealth(){
   return {
-    type: 'DECREASE_PROGRESS',
+    type: 'DECREASE_HEALTH',
   }
 }

@@ -4,12 +4,12 @@ import React from 'react';
 const progressbars = [
   {
     type: 'Health',
-    progress: 30,
+    progress: 0,
     symbol: <MdFavorite />,
   },
   {
     type: 'Experience',
-    progress: 20,
+    progress: 0,
     symbol: <MdGrade />,
   }
 ];
