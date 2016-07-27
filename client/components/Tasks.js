@@ -28,7 +28,7 @@ const Tasks = React.createClass({
         <div>
             {tasks.map((task, i) => <p key={i}>
               <span>
-                <Button bsStyle='default' bsSize='small'>
+                <Button bsStyle='default' bsSize='small' onClick={()=>{this.props.toggleTask(task)}}>
                   {task.symbol}
                 </Button>
               </span>

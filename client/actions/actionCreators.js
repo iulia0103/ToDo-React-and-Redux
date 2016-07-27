@@ -10,9 +10,9 @@ export function addTask(taskType, text){
   }
 }
 
-export function completeTask(id){
+export function toggleTask(id){
   return {
-    type: 'COMPLETE_TASK',
+    type: 'TOGGLE_TASK',
     id
   }
 }

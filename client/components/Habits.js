@@ -34,8 +34,17 @@ const Habits = React.createClass({
 
         <div>
           {habits.map((habit, i) => <p key={i}>
-              <span><Button bsStyle='default' bsSize='small' onClick={this.props.increaseHealth.bind(null, i)}>&#43;</Button></span>
-              <span><Button bsStyle='default' bsSize='small' onClick={this.props.decreaseHealth.bind(null, i)}>&#8722;</Button></span>
+              <span>
+                <Button bsStyle='default' bsSize='small' onClick={this.props.increaseHealth.bind(null, i)}>
+                  &#43;
+                </Button>
+              </span>
+              <span>
+                <Button bsStyle='default' bsSize='small' onClick={this.props.decreaseHealth.bind(null, i)}>
+                  &#8722;
+                </Button>
+              </span>
+              
               <span>   {habit.text}   </span>
               <MdClear onClick={this.props.removeHabit.bind(null, i)} />
             </p>)}
