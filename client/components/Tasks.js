@@ -25,12 +25,12 @@ const Tasks = React.createClass({
         <span><Button bsStyle='default' bsSize='small'>Completed »</Button></span>
 
         <div>
-          {tasks.map((task, i) => <p key={i}>
-            <span><Button bsStyle='default' bsSize='small'>&#9733;</Button></span>
-            <span>   {task.text}  </span>
-            <button onClick={()=>{this.props.removeTask(task)}}>&times;</button>
-          </p>)}
-        </div>
+            {tasks.map((task, i) => <p key={i}>
+              <span><Button bsStyle='default' bsSize='small'>&#9733;</Button></span>
+              <span>   {task.text}  </span>
+              <button onClick={()=>{this.props.removeTask(task)}}>&times;</button>
+            </p>)}
+          </div>
       </div>
     )
   }
