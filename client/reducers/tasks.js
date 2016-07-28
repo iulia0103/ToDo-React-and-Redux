@@ -1,14 +1,15 @@
 import {MdGrade, MdDoneAll} from 'react-icons/lib/md';
 import React from 'react';
 
-function tasks(state=[], action){
-  const task=action.id;
-  let i = state.indexOf(task);
+// Simple counter to ensure each task has unique id, see ADD_TASK handler below
+let id = 0;
 
+function tasks(state=[], action){
   switch (action.type) {
     case 'ADD_TASK':
+      id += 1;
       return [...state, {
-        id: state.length + 1,
+        id,
         taskType: action.taskType,
         text: action.text,
         completed: false
@@ -16,27 +17,16 @@ function tasks(state=[], action){
       break;
 
     case 'TOGGLE_TASK':
-      if(task.completed === false) {
-        return [
-          ...state.slice(0,i),
-          ...state[i], {completed: true, symbol: <MdDoneAll />},
-          ...state.slice(i+1)
-        ];
-      }
-      else {
-        return [
-          ...state.slice(0,i),
-          ...state[i], {completed: false, symbol: <MdGrade />},
-          ...state.slice(i+1)
-        ];
-      }
+      return state.map((task) => {
+        if (task.id === action.id) {
+          task.completed = !task.completed
+        }
+        return task
+      });
       break;
 
     case 'REMOVE_TASK':
-      return [
-        ...state.slice(0,i),
-        ...state.slice(i+1)
-      ];
+      return state.filter((task) => task.id != action.id);
       break;
 
     default:
