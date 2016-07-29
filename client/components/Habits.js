@@ -13,7 +13,7 @@ const Habits = React.createClass({
     this.refs.habitForm.reset();
   },
   render(){
-    const habits = this.props.habits;
+    const {habits} = this.props;
     const i = habits.index;
     return(
       <div>
