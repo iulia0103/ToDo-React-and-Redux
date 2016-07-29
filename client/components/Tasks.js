@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
-import {MdClear} from 'react-icons/lib/md';
+import {MdClear, MdStar, MdDoneAll} from 'react-icons/lib/md';
 
 
 const Tasks = React.createClass({
@@ -29,12 +29,12 @@ const Tasks = React.createClass({
         <div>
             {tasks.map((task, i) => <p key={i}>
               <span>
-                <Button onClick={()=>{this.props.toggleTask(task)}}>
-                  {task.symbol}
+                <Button onClick={()=>{this.props.toggleTask(task.id)}}>
+                  {task.completed ? <MdDoneAll /> : <MdStar />}
                 </Button>
               </span>
               <span>   {task.text}  </span>
-              <MdClear onClick={()=>{this.props.removeTask(task)}} />
+              <MdClear onClick={()=>{this.props.removeTask(task.id)}} />
             </p>)}
           </div>
       </div>

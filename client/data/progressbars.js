@@ -1,16 +1,10 @@
-import {MdGrade, MdFavorite} from 'react-icons/lib/md';
-import React from 'react';
 
 const progressbars = [
   {
-    type: 'Health',
-    progress: 0,
-    symbol: <MdFavorite />,
+    progressType: 'Health'
   },
   {
-    type: 'Experience',
-    progress: 0,
-    symbol: <MdGrade />,
+    progressType: 'Experience'
   }
 ];
 
