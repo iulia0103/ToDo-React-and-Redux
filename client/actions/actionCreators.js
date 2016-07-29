@@ -48,10 +48,16 @@ export function addProgress(progressType){
   }
 }
 
-export function increaseHealth(){
-  return {type: 'INCREASE_HEALTH'}
+export function increaseProgress(id){
+  return {
+    type: 'INCREASE_PROGRESS',
+    id
+  }
 }
 
-export function decreaseHealth(){
-  return {type: 'DECREASE_HEALTH'}
+export function decreaseProgress(id){
+  return {
+    type: 'DECREASE_PROGRESS',
+    id
+  }
 }
