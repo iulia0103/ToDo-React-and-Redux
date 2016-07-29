@@ -32,12 +32,12 @@ const Habits = React.createClass({
         <div>
           {habits.map((habit, i) => <p key={i}>
               <span>
-                <Button onClick={()=>{this.props.increaseHealth()}}>
+                <Button onClick={()=>{this.props.increaseProgress(1)}}>
                   &#43;
                 </Button>
               </span>
               <span>
-                <Button onClick={()=>{this.props.decreaseHealth()}}>
+                <Button onClick={()=>{this.props.decreaseProgress(1)}}>
                   &#8722;
                 </Button>
               </span>
