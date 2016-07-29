@@ -27,7 +27,7 @@ function progressbars(state=[], action){
       return state.map((progressbar) => {
         if (progressbar.id === action.id) {
           progressbar.progress = progressbar.progress - 2;
-          if(progressbar.progress <= 100) {
+          if(progressbar.progress < 0) {
             progressbar.progress = 0;
           }
         }
