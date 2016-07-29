@@ -1,5 +1,12 @@
+let progress = 0;
+
 function progressbars(state=[], action){
   switch (action.type) {
+    case 'ADD_PROGRESS':
+      return [...state, {
+        progressType: action.progressType,
+        progress
+      }]
 
     case 'INCREASE_HEALTH':
       return [
