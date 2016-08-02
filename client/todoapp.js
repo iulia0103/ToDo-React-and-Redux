@@ -10,7 +10,9 @@ import {Router, Route, browserHistory} from 'react-router';
 import {Provider} from 'react-redux';
 import store, {history} from './store.js';
 
-import 'bootstrap/less/bootstrap.less';
+//import bootstrap and css
+import '!style!css!less!bootstrap/less/bootstrap.less';
+import '!style!css!less!./styles/style.less';
 
 //import data
 import tasks from './data/tasks.js';

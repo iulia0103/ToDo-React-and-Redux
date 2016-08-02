@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
-import {MdClear} from 'react-icons/lib/md';
+import {MdDeleteForever} from 'react-icons/lib/md';
 
 
 const Habits = React.createClass({
@@ -18,32 +18,28 @@ const Habits = React.createClass({
     return(
       <div>
         <form ref="habitForm" onSubmit={this.handleSubmit}>
-          <input type="text" ref="habit" placeholder="habit" />
+          <input type="text" ref="add habit" placeholder="  add habit" className="add" />
           <input type="submit" hidden/>
         </form>
 
-        <span>
-          <Button>Strong »</Button>
-        </span>
-        <span>
-          <Button>Weak »</Button>
-        </span>
+        {/*<span><Button>Strong »</Button></span>
+        <span><Button>Weak »</Button></span>*/}
 
         <div>
           {habits.map((habit, i) => <p key={i}>
               <span>
-                <Button onClick={()=>{this.props.increaseProgress(1)}}>
+                <Button className="increase-progress" onClick={()=>{this.props.increaseProgress(1)}}>
                   &#43;
                 </Button>
               </span>
               <span>
-                <Button onClick={()=>{this.props.decreaseProgress(1)}}>
+                <Button className="decrease-progress" onClick={()=>{this.props.decreaseProgress(1)}}>
                   &#8722;
                 </Button>
               </span>
 
               <span>   {habit.text}   </span>
-              <MdClear onClick={this.props.removeHabit.bind(null, i)} />
+              <MdDeleteForever className="delete" onClick={this.props.removeHabit.bind(null, i)} />
             </p>)}
         </div>
       </div>

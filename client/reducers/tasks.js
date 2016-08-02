@@ -10,14 +10,21 @@ function tasks(state=[], action){
         id,
         taskType: action.taskType,
         text: action.text,
-        completed: false
+        completed: false,
+        class: 'active'
       }];
       break;
 
     case 'TOGGLE_TASK':
       return state.map((task) => {
         if (task.id === action.id) {
-          task.completed = !task.completed
+          task.completed = !task.completed;
+          if (task.completed) {
+            task.class = 'completed';
+          }
+          else {
+            task.class = 'active';
+          }
         }
         return task
       });

@@ -1,0 +1,140 @@
+@base: #595959;
+@base-border: #adadad;
+@base-shadow: #a6a6a6;
+@completed: #ff7733;
+@completed-shadow: #ffccb3;
+@increase: #ff9999;
+@increase-shadow: #ffb3b3;
+@decrease: #80bfff;
+@decrease-shadow: #b3d9ff;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+.main {
+  color: @base;
+  p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+  }
+}
+
+.jumbotron {
+  background-image: url('http://res.cloudinary.com/dpwjutqio/image/upload/v1470129380/todo_aumrts.jpg');
+  background-position: 50% 40%;
+  background-size: 100%;
+  color: white;
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+  }
+}
+
+h1, h2 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+form {
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.add {
+  border: 1px solid @completed;
+  border-radius: 10px 0px 10px 0px;
+  box-shadow: 3px 4px 5px @completed-shadow;
+  color: @completed;
+}
+
+::-webkit-input-placeholder {
+   color: @completed-shadow;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @completed-shadow;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+:-ms-input-placeholder {
+   color: @completed-shadow;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.btn {
+  border-radius: 10px 0px 10px 0px;
+  margin-right: 5px;
+}
+
+.active {
+  .btn {
+    background: white;
+    box-shadow: 3px 4px 5px @base-shadow;
+    svg {
+      color: @base;
+    }
+    &:hover {
+      background-color: @base;
+      svg {
+        color: white;
+      }
+    }
+  }
+}
+
+.completed {
+  color: @completed;
+  &:focus {
+    outline: none;
+    color: @completed;
+  }
+  .btn {
+    border-color: @completed;
+    background: white;
+    box-shadow: 3px 4px 5px @completed-shadow;
+    &:hover {
+      color: white;
+      background-color: @completed;
+    }
+  }
+}
+
+.increase-progress{
+  color: @increase;
+  border-color: @increase;
+  box-shadow: 3px 4px 5px @increase-shadow;
+  &:hover {
+    color: white;
+    border-color: @increase;
+    background-color: @increase;
+  }
+  &:focus {
+    outline: none;
+    color: @increase;
+    border-color: @increase;
+    background-color: white;
+  }
+}
+
+.decrease-progress{
+  color: @decrease;
+  border-color: @decrease;
+  box-shadow: 3px 4px 5px @decrease-shadow;
+  &:hover {
+    color: white;
+    border-color: @decrease;
+    background-color: @decrease;
+  }
+  &:focus {
+    outline: none;
+    color: @decrease;
+    border-color: @decrease;
+    background-color: white;
+  }
+}
+
+.delete {
+  color: #d9d9d9;
+  font-size: 20px;
+}
