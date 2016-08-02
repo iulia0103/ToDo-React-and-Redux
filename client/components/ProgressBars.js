@@ -15,7 +15,7 @@ const ProgressBars = React.createClass({
             <Row>
               <Col md={2}>
                 <p className="category">
-                  {progressbar.progressType}: {progressbar.score}
+                  {progressbar.progressType} {progressbar.score}
                   {(progressbar.progressType === 'Experience') ? <MdStar /> : <MdFavorite /> }
                 </p>
               </Col>

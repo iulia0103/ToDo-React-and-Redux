@@ -26,7 +26,7 @@ const habits = [
   },
   {
     type: 'weak',
-    text: 'don`t learn anything new'
+    text: 'don`t learn new stuff'
   }
 ];
 
