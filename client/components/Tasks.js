@@ -19,12 +19,12 @@ const Tasks = React.createClass({
     return(
       <div>
         <form ref="taskForm" onSubmit={this.handleSubmit}>
-          <input type="text" ref="task" placeholder="task" />
+          <input type="text" ref="task" placeholder="  add task" className="add"/>
           <input type="submit" hidden/>
         </form>
 
-        <span><Button>Active »</Button></span>
-        <span><Button>Completed »</Button></span>
+        {/*<span><Button onClick={this.showActive()}>Active »</Button></span>
+        <span><Button onClick={this.showCompleted()}>Completed »</Button></span>*/}
 
         <div>
           {tasks.map((task, i) => <SingleTask {...this.props} key={i} i={i} task={task}/>)}

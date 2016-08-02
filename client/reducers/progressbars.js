@@ -1,5 +1,6 @@
 let progress = 0;
 let id = 0;
+let score = 0;
 
 function progressbars(state=[], action){
   switch (action.type) {
@@ -8,16 +9,18 @@ function progressbars(state=[], action){
       return [...state, {
         id,
         progressType: action.progressType,
-        progress
+        progress,
+        score
       }]
 
     case 'INCREASE_PROGRESS':
       return state.map((progressbar) => {
         if (progressbar.id === action.id) {
-          progressbar.progress = progressbar.progress + 2;
+          progressbar.progress = progressbar.progress + 1;
           if(progressbar.progress > 100) {
             progressbar.progress = 0;
           }
+          progressbar.score = progressbar.score + 1;
         }
         return progressbar
       });
@@ -26,10 +29,11 @@ function progressbars(state=[], action){
     case 'DECREASE_PROGRESS':
       return state.map((progressbar) => {
         if (progressbar.id === action.id) {
-          progressbar.progress = progressbar.progress - 2;
+          progressbar.progress = progressbar.progress - 1;
           if(progressbar.progress < 0) {
             progressbar.progress = 0;
           }
+          progressbar.score = progressbar.score - 1;
         }
         return progressbar
       });

@@ -18,19 +18,19 @@ module.exports = {
   ],
   module: {
     loaders: [
-    // js
-    {
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
-    },
-    // CSS
-    {
-      test: /\.styl$/,
-      include: path.join(__dirname, 'client'),
-      loader: 'style-loader!css-loader!stylus-loader'
-    },
-    // Used for Bootstrap Less Source Files
+      // js
+      {
+        test: /\.js$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'client')
+      },
+      // CSS
+      {
+        test: /\.less$/,
+        include: path.join(__dirname, 'client'),
+        loader: 'style-loader!css-loader!less-loader'
+      },
+      // Used for Bootstrap Less Source Files
       { test: /\.less/, loader: 'style!css!less' },
       // Used for Bootstrap Less Source Files
       { test: /\.css/, loader: 'style!css' },
