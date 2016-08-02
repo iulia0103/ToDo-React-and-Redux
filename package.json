@@ -14,9 +14,9 @@
     "type": "git",
     "url": "https://github.com/iulia0103"
   },
-  "author": "Wes Bos",
+  "author": "iulia0103",
   "license": "MIT",
-  "homepage": "https://github.com/wesbos/Learn-Redux",
+  "homepage": "https://github.com/iulia0103",
   "dependencies": {
     "babel-core": "^6.7.7",
     "babel-eslint": "^6.0.4",
